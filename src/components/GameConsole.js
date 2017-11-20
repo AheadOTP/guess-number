@@ -10,16 +10,16 @@ class GameConsole extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    var console = document.forms.gameConsole;
-    if (this.state.turnOfPlayer) {
+    let console = document.forms.gameConsole;
+    if (this.props.turnOfPlayer) {
       this.props.playerTurn(console.numberAskedByPlayerOrNumberOfPlusesAndMinuses.value);
     } else {
       this.props.computerTurn(console.numberAskedByPlayerOrNumberOfPlusesAndMinuses.value);
     }
 
-    this.setState({ turnOfPlayer: !this.state.turnOfPlayer });
     console.numberAskedByPlayerOrNumberOfPlusesAndMinuses.value = '';
   }
+
 
   render() {
     return (

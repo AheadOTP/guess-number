@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css/GameScoreboard.css';
 
 class GameScoreboard extends Component {
 
@@ -6,11 +7,21 @@ class GameScoreboard extends Component {
     const listOfPlayersTurns = this.props.playerTurns.map((number, i) =>
       <tr key={i}>
         <td>{i+1}</td>
-        <td>{number}</td>
+        <td>{number.numberAskedByPlayer}</td>
       </tr>
     );
     return (
-      <table><tbody>{listOfPlayersTurns}</tbody></table>
+      <table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Player turns</th>
+            <th>Computer turns</th>
+          </tr>
+        </thead>
+
+        <tbody>{listOfPlayersTurns}</tbody>
+      </table>
     );
   }
 }
