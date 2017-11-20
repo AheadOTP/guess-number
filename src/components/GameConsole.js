@@ -4,14 +4,14 @@ class GameConsole extends Component {
   constructor() {
     super();
 
-    this.state = { turnOfPlayer: 1 };
+    this.state = { turnOfPlayer: true };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     var console = document.forms.gameConsole;
-    if (this.state.turnOfPlayer === 1) {
+    if (this.state.turnOfPlayer) {
       this.props.playerTurn(console.numberAskedByPlayerOrNumberOfPlusesAndMinuses.value);
     } else {
       this.props.computerTurn(console.numberAskedByPlayerOrNumberOfPlusesAndMinuses.value);
