@@ -8,6 +8,8 @@ class GameScoreboard extends Component {
       <tr key={i}>
         <td>{i+1}</td>
         <td>{number.numberAskedByPlayer}</td>
+        <td>{number.numberOfPluses}</td>
+        <td>{number.numberOfMinuses}</td>
       </tr>
     );
     return (
@@ -16,7 +18,8 @@ class GameScoreboard extends Component {
           <tr>
             <th>№</th>
             <th>Player turns</th>
-            <th>Computer turns</th>
+            <th>Pluses</th>
+            <th>Minuses</th>
           </tr>
         </thead>
 
